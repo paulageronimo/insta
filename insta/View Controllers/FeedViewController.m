@@ -34,6 +34,7 @@
             [alert addAction:dismissAction];
             [self presentViewController:alert animated:YES completion:^{}];
         } else {
+            // segue to login controller
             SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             LoginViewController *loginController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
