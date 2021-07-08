@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3E8341AEA78144D4A682B255 /* libPods-insta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D862FC5E1FB58575B5F0650 /* libPods-insta.a */; };
+		5CB6AB002696C5FF0010166C /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6AAFF2696C5FF0010166C /* FeedViewController.m */; };
+		5CB6AB032696C6AD0010166C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6AB022696C6AD0010166C /* LoginViewController.m */; };
 		5CE0F4052694EC5E00D8D74B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F4042694EC5E00D8D74B /* AppDelegate.m */; };
 		5CE0F4082694EC5E00D8D74B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F4072694EC5E00D8D74B /* SceneDelegate.m */; };
 		5CE0F40E2694EC5E00D8D74B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0F40C2694EC5E00D8D74B /* Main.storyboard */; };
@@ -43,6 +45,10 @@
 		378E78E3CD5BE1E386127651 /* libPods-instaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6950930B7693D06E9F888C /* Pods-insta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta.debug.xcconfig"; path = "Target Support Files/Pods-insta/Pods-insta.debug.xcconfig"; sourceTree = "<group>"; };
 		551F2315EAF181595C5EDC40 /* Pods-insta-instaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-instaUITests.debug.xcconfig"; path = "Target Support Files/Pods-insta-instaUITests/Pods-insta-instaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CB6AAFE2696C5FF0010166C /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		5CB6AAFF2696C5FF0010166C /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		5CB6AB012696C6AD0010166C /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5CB6AB022696C6AD0010166C /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5CE0F4002694EC5E00D8D74B /* insta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = insta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE0F4032694EC5E00D8D74B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5CE0F4042694EC5E00D8D74B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,8 +109,32 @@
 				81504CB92B76BBC2EDC78B27 /* Pods-instaTests.debug.xcconfig */,
 				64CC0BF73BC2CC10B0C74085 /* Pods-instaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5CB6AAFB2696C5700010166C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5CB6AAFC2696C5750010166C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5CB6AAFE2696C5FF0010166C /* FeedViewController.h */,
+				5CB6AAFF2696C5FF0010166C /* FeedViewController.m */,
+				5CB6AB012696C6AD0010166C /* LoginViewController.h */,
+				5CB6AB022696C6AD0010166C /* LoginViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5CB6AAFD2696C5900010166C /* Object */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Object;
 			sourceTree = "<group>";
 		};
 		5CE0F3F72694EC5E00D8D74B = {
@@ -132,6 +162,9 @@
 		5CE0F4022694EC5E00D8D74B /* insta */ = {
 			isa = PBXGroup;
 			children = (
+				5CB6AAFD2696C5900010166C /* Object */,
+				5CB6AAFC2696C5750010166C /* View Controllers */,
+				5CB6AAFB2696C5700010166C /* Views */,
 				5CE0F4032694EC5E00D8D74B /* AppDelegate.h */,
 				5CE0F4042694EC5E00D8D74B /* AppDelegate.m */,
 				5CE0F4062694EC5E00D8D74B /* SceneDelegate.h */,
@@ -412,7 +445,9 @@
 			files = (
 				5CE0F4052694EC5E00D8D74B /* AppDelegate.m in Sources */,
 				5CE0F4162694EC5F00D8D74B /* main.m in Sources */,
+				5CB6AB002696C5FF0010166C /* FeedViewController.m in Sources */,
 				5CE0F4082694EC5E00D8D74B /* SceneDelegate.m in Sources */,
+				5CB6AB032696C6AD0010166C /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
