@@ -116,9 +116,6 @@
 //    }];
 }
 
-//- (IBAction)tapLogout:(id)sender{
-//
-//}
 
 
 //
