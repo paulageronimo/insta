@@ -6,6 +6,7 @@
 //
 
 #import "LoginViewController.h"
+#import "FeedViewController.h"
 #import "Parse/Parse.h"
 
 @interface LoginViewController ()
@@ -41,7 +42,7 @@
     }];
 }
 -(void) alert: (NSString *)errorMessage{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING"
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ERROR"
     message:errorMessage
     preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
@@ -49,9 +50,8 @@
     handler:^(UIAlertAction * _Nonnull action) {}];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:^{}];
-    
-
 }
+
 -(BOOL)validUserAndPassword {
     if ([self.usernameField.text isEqual:@""]||[self.passwordField.text isEqual:@""]) {
         [self alert:@"Invalid username and password."];
@@ -96,7 +96,6 @@
             }
         }];
     }
-
 //    // initialize a user object
 //    PFUser *newUser = [PFUser user];
 //

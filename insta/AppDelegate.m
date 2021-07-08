@@ -15,15 +15,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(  NSDictionary *)launchOptions {
-
-    ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-
-        configuration.applicationId = @"sX4XSijDSHEVuyLoDFsZg2CiXHTT7SpXaSc8rfyr"; // <- UPDATE
-        configuration.clientKey = @"CToo9ENHxZ9XoezXEQViaIGvdpjh70QS2uRTaTTV"; // <- UPDATE
-        configuration.server = @"https://parseapi.back4app.com";
-    }];
-
-    [Parse initializeWithConfiguration:config];
 //
 //    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
 //     gameScore[@"score"] = @1337;
