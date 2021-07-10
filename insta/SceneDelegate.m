@@ -19,14 +19,7 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-
-        configuration.applicationId = @"sX4XSijDSHEVuyLoDFsZg2CiXHTT7SpXaSc8rfyr"; // <- UPDATE
-        configuration.clientKey = @"CToo9ENHxZ9XoezXEQViaIGvdpjh70QS2uRTaTTV"; // <- UPDATE
-        configuration.server = @"https://parseapi.back4app.com";
-    }];
-
-    [Parse initializeWithConfiguration:config];
+    
     if (PFUser.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         

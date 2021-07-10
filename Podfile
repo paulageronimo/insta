@@ -7,7 +7,8 @@ target 'insta' do
 
   # Pods for insta
   pod 'Parse'
-  pod 'ParseLiveQuery'
+  pod 'AFNetworking'
+  pod 'DateTools'
 
   target 'instaTests' do
     inherit! :search_paths

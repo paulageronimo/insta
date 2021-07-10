@@ -29,9 +29,7 @@
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             [self alert:@"Could not log in user"];
-            NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
-            NSLog(@"User logged in successfully");
             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         }
     }];
@@ -42,7 +40,7 @@
     }];
 }
 -(void) alert: (NSString *)errorMessage{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ERROR"
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Notification"
     message:errorMessage
     preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
@@ -74,23 +72,9 @@
         // call sign up function on the object
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
             if (error != nil) {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING"
-                message:@"Unable to sign up user."
-                preferredStyle:(UIAlertControllerStyleAlert)];
-                // create an OK action
-                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                style:UIAlertActionStyleDefault
-                handler:^(UIAlertAction * _Nonnull action) {
-                    // handle response here.
-                }];
-                // add the OK action to the alert controller
-                [alert addAction:okAction];
-                [self presentViewController:alert animated:YES completion:^{
-                    // optional code for what happens after the alert controller has finished presenting
-                }];
-                NSLog(@"Error: %@", error.localizedDescription);
+                [self alert:@"Unable to register user."];
             } else {
-                NSLog(@"User registered successfully");
+                [self alert:@"User registered successfully"];
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
                 // manually segue to logged in view
             }

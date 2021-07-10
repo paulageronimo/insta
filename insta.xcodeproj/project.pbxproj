@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3E8341AEA78144D4A682B255 /* libPods-insta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D862FC5E1FB58575B5F0650 /* libPods-insta.a */; };
+		5C6DAC2426992B6C00359E0A /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6DAC2326992B6C00359E0A /* DetailsViewController.m */; };
+		5C90244D2696F338003B07DD /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C90244C2696F338003B07DD /* PhotoMapViewController.m */; };
+		5C9024502696FCED003B07DD /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C90244F2696FCED003B07DD /* PostViewController.m */; };
+		5C90245C2697E507003B07DD /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C90245B2697E507003B07DD /* Post.m */; };
+		5C90245F2697F282003B07DD /* FeedPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C90245E2697F282003B07DD /* FeedPostCell.m */; };
 		5CB6AB002696C5FF0010166C /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6AAFF2696C5FF0010166C /* FeedViewController.m */; };
 		5CB6AB032696C6AD0010166C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB6AB022696C6AD0010166C /* LoginViewController.m */; };
 		5CE0F4052694EC5E00D8D74B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0F4042694EC5E00D8D74B /* AppDelegate.m */; };
@@ -45,6 +50,16 @@
 		378E78E3CD5BE1E386127651 /* libPods-instaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6950930B7693D06E9F888C /* Pods-insta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta.debug.xcconfig"; path = "Target Support Files/Pods-insta/Pods-insta.debug.xcconfig"; sourceTree = "<group>"; };
 		551F2315EAF181595C5EDC40 /* Pods-insta-instaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-instaUITests.debug.xcconfig"; path = "Target Support Files/Pods-insta-instaUITests/Pods-insta-instaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5C6DAC2226992B6C00359E0A /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		5C6DAC2326992B6C00359E0A /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		5C90244B2696F338003B07DD /* PhotoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
+		5C90244C2696F338003B07DD /* PhotoMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
+		5C90244E2696FCED003B07DD /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		5C90244F2696FCED003B07DD /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		5C90245A2697E507003B07DD /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		5C90245B2697E507003B07DD /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		5C90245D2697F282003B07DD /* FeedPostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedPostCell.h; sourceTree = "<group>"; };
+		5C90245E2697F282003B07DD /* FeedPostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedPostCell.m; sourceTree = "<group>"; };
 		5CB6AAFE2696C5FF0010166C /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		5CB6AAFF2696C5FF0010166C /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		5CB6AB012696C6AD0010166C /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -112,6 +127,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5C9024602697F28A003B07DD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5C90245E2697F282003B07DD /* FeedPostCell.m */,
+				5C90245D2697F282003B07DD /* FeedPostCell.h */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		5CB6AAFB2696C5700010166C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +150,10 @@
 				5CB6AAFF2696C5FF0010166C /* FeedViewController.m */,
 				5CB6AB012696C6AD0010166C /* LoginViewController.h */,
 				5CB6AB022696C6AD0010166C /* LoginViewController.m */,
+				5C90244B2696F338003B07DD /* PhotoMapViewController.h */,
+				5C90244C2696F338003B07DD /* PhotoMapViewController.m */,
+				5C90244E2696FCED003B07DD /* PostViewController.h */,
+				5C90244F2696FCED003B07DD /* PostViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -133,6 +161,8 @@
 		5CB6AAFD2696C5900010166C /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				5C90245A2697E507003B07DD /* Post.h */,
+				5C90245B2697E507003B07DD /* Post.m */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -140,6 +170,8 @@
 		5CE0F3F72694EC5E00D8D74B = {
 			isa = PBXGroup;
 			children = (
+				5C6DAC2326992B6C00359E0A /* DetailsViewController.m */,
+				5C6DAC2226992B6C00359E0A /* DetailsViewController.h */,
 				5CE0F4022694EC5E00D8D74B /* insta */,
 				5CE0F41E2694EC6000D8D74B /* instaTests */,
 				5CE0F4292694EC6000D8D74B /* instaUITests */,
@@ -162,6 +194,7 @@
 		5CE0F4022694EC5E00D8D74B /* insta */ = {
 			isa = PBXGroup;
 			children = (
+				5C9024602697F28A003B07DD /* Cell */,
 				5CB6AAFD2696C5900010166C /* Object */,
 				5CB6AAFC2696C5750010166C /* View Controllers */,
 				5CB6AAFB2696C5700010166C /* Views */,
@@ -443,11 +476,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9024502696FCED003B07DD /* PostViewController.m in Sources */,
+				5C6DAC2426992B6C00359E0A /* DetailsViewController.m in Sources */,
+				5C90244D2696F338003B07DD /* PhotoMapViewController.m in Sources */,
+				5C90245F2697F282003B07DD /* FeedPostCell.m in Sources */,
 				5CE0F4052694EC5E00D8D74B /* AppDelegate.m in Sources */,
 				5CE0F4162694EC5F00D8D74B /* main.m in Sources */,
 				5CB6AB002696C5FF0010166C /* FeedViewController.m in Sources */,
 				5CE0F4082694EC5E00D8D74B /* SceneDelegate.m in Sources */,
 				5CB6AB032696C6AD0010166C /* LoginViewController.m in Sources */,
+				5C90245C2697E507003B07DD /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

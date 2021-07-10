@@ -10,15 +10,28 @@
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "Post.h"
+#import "FeedPostCell.h"
 
-@interface FeedViewController ()
+
+@interface FeedViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) NSMutableArray *posts;
 @end
 
 @implementation FeedViewController
+//@dynamic tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    [self fetchPosts];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (IBAction)tapLogout:(id)sender{
@@ -44,16 +57,28 @@
     // add a button, are you sure you want to log out? if yes then log out, else cancel request
 }
 
+-(void)fetchPosts {
+    PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
+    //[query whereKey:@"likesCount" greaterThan:@100];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    [postQuery includeKey:@"createdAt"];
+    postQuery.limit = 20;
 
-//- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-//    // cell info
-//
-//}
-//
-//- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    // count of the number of rows
-//    return 5;
-//}
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> *posts, NSError* _Nullable error) {
+        if (posts != nil) {
+            self.posts = [posts copy];
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+            // do something with the array of object returned by the call
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+
+      
+}
 
 
 #pragma mark - Navigation
@@ -65,6 +90,16 @@
     
 }
 
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    FeedPostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FeedPostCell" forIndexPath:indexPath];
+    Post *post = self.posts[indexPath.row];
+    cell.post = post;
+    return cell;
+}
 
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.posts.count;
+    //return 1;
+}
 
 @end
